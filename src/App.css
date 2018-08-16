@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url(./Font/HELR45W.ttf) format('ttf')
+}
+
 .App {
   text-align: center;
 }

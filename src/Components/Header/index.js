@@ -2,19 +2,14 @@ import React from 'react';
 import {
 	Collapse,
 	Navbar,
-	NavbarToggler,
-	NavbarBrand,
 	Nav,
 	NavItem,
 	NavLink,
-	UncontrolledDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	Container,
-	DropdownItem
+	Container
 } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
+import { linkStyle } from './styles'
 
 export default class Example extends React.Component {
 	constructor(props) {
@@ -34,35 +29,30 @@ export default class Example extends React.Component {
 		return (
 			<div>
 
-				<Navbar color="light" light expand="md">
+				<Navbar style= {{padding: '0px'}} color="dark" light expand="md">
 					<Container>
-						<NavbarBrand href="/">reactstrap</NavbarBrand>
-						<NavbarToggler onClick={this.toggle} />
+				
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>
-								<NavItem>
-									<NavLink tag={Link} to="/">Inicio</NavLink>
+								<NavItem style = {{borderBottom: '3px solid rgb(255, 94, 0)', padding: '8px'}}  >
+									<NavLink style ={linkStyle}
+										tag={Link} 
+										to="/">
+										INICIO
+									</NavLink>
 								</NavItem>
 								<NavItem>
-									<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+									<NavLink style ={linkStyle} tag={Link} to="/">NOSOTROS</NavLink>
 								</NavItem>
-								<UncontrolledDropdown nav inNavbar>
-									<DropdownToggle nav caret>
-										Options
-                </DropdownToggle>
-									<DropdownMenu right>
-										<DropdownItem>
-											Option 1
-                  </DropdownItem>
-										<DropdownItem>
-											Option 2
-                  </DropdownItem>
-										<DropdownItem divider />
-										<DropdownItem>
-											Reset
-                  </DropdownItem>
-									</DropdownMenu>
-								</UncontrolledDropdown>
+								<NavItem>
+									<NavLink  style ={linkStyle}  tag={Link} to="/">SERVICIOS</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink style ={linkStyle} tag={Link} to="/">CLIENTES</NavLink>
+								</NavItem>
+								<NavItem>
+									<NavLink style ={linkStyle} tag={Link} to="/">CONTACTO</NavLink>
+								</NavItem>
 							</Nav>
 						</Collapse>
 					</Container>
