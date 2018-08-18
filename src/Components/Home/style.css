@@ -1,0 +1,15 @@
+.btnContact  {
+  background-color: 'red'
+}
+
+@import url('https://fonts.googleapis.com/css?family=Tinos');
+
+.textWho {
+  font-family: 'Tinos', serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.readMore {
+  font-size: 15px;
+}

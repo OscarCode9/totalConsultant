@@ -1,0 +1,14 @@
+div.footerStyle {
+  height: 100px;
+  text-align: left;
+  background: rgb(24, 24, 24)
+}
+
+p.textCopy {
+  color: rgb(255, 255, 255);
+}
+
+.iconSocial > i {
+  color: white
+
+}

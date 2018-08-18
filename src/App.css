@@ -2,8 +2,12 @@
   font-family: 'Helvetica';
   font-style: normal;
   font-weight: 400;
-  src:
-    url(./Font/HELR45W.ttf) format('ttf')
+  src: url('./Font/Helvetica.ttf') format('truetype'),
+  url('./Font/Helvetica.ttf') format('woff'), /* Modern Browsers */
+}
+
+* {
+  font-family: 'Helvetica'
 }
 
 .App {
@@ -14,6 +18,11 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+
+a {
+  outline : none;
+}
+
 
 .App-header {
   background-color: #222;

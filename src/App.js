@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import Routes from './Routes'
 import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
+import Footer from './Components/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
             <div>
               <Header/>
               <Routes/>
+              <Footer/>
             </div>
         </Router>
       </div>

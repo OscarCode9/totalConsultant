@@ -1,0 +1,17 @@
+.navdown {
+  height: 80px;
+  background:  black;
+}
+
+p.textLlamanos {
+  font-weight: 500;
+  float: right;
+  font-size: 19px;
+}
+
+
+span#textNumero {
+  font-weight: 700;
+  float: right;
+  font-size: 19px;
+}
