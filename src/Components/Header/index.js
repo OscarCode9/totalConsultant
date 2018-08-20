@@ -50,17 +50,23 @@ export default class Example extends React.Component {
 			]
 		};
 	}
+
+	componentWillMount() {
+		const pathname = window.location.pathname;
+		this.changeActive(pathname) 
+	}
+	
+	
 	toggle() {
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
 	}
-	changeActive = (e) => {
-
-		const id = e.target.id;
+	changeActive = (id) => {
 		this.setState(prevState => {
 			const newNavItem = prevState.navItems.map(item => {
-				if (item.text === id) {
+				console.log(item.text ,id)
+				if (item.path === id) {
 					item.active = true;
 				} else {
 					item.active = false
@@ -86,8 +92,8 @@ export default class Example extends React.Component {
 								{this.state.navItems.map(item => (
 									<NavItem key={item.text} style={item.active ? { borderBottom: '3px solid rgb(255, 94, 0)', padding: '5px', transition: 'all .1s ease 0s' } : { padding: '8px' }}  >
 										<NavLink
-											id={item.text}
-											onClick={this.changeActive}
+											id={item.path}
+											onClick={(e) => {this.changeActive(e.target.id)}}
 											style={item.active ? linkStyle : {...linkStyle, color: '#fff' } }
 											tag={Link}
 											to={item.path} >

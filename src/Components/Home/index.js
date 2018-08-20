@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Slide from './Slide'
 import './style.css'
 import { Row, Col, Container } from 'reactstrap';
+
 const pStyle = {
   fontFamily: 'Helvetica',
   fontSize: '40px',
@@ -88,6 +89,15 @@ export default class Home extends Component {
                   creando y desarrollando servicios con base en las necesidades de cada cliente,
                   nos actualizamos constantemente para tener la mejor opinión.
                 </p>
+                
+                <p className="textWho">
+                Desde 2004, otorgamos servicios para el Capital Humano y las actividades inherentes a su administración.
+                </p>
+
+                <p className="textWho">
+                  En el 2009 TCS se fortalece por la inclusión de servicios contables, fiscales y legales.
+                </p>
+
                 <p className="readMore">{'LEER MAS >>'} </p>
               </div>
             </Col>
@@ -99,6 +109,8 @@ export default class Home extends Component {
                   Ser una sociedad dedicada a ofrecer servicios, asesoria y consultoria a personas físicas 
                   y morales en el ámbito de los negocios formales y legales en México. 
                 </p>
+
+               
                 <p className="readMore">{'LEER MAS >>'} </p>
               </div>
             </Col>
