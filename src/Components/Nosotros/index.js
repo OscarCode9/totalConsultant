@@ -31,7 +31,7 @@ export default class Nosotros extends Component {
         <Container style ={styleContainer}  >
         <Row style={{
           paddingRight: '15px',
-          paddinLeft: '15px'
+          paddingLeft: '15px'
           }} >
           <Col lg= {8} style = {{ padding: '0px'}} >
             <img style={imgOneStyle}  src={img1} alt = 'img1' />

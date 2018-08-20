@@ -16,5 +16,6 @@ export const logoStyle = {
   height:'180px',
   weight: 'auto',
   position: 'relative',
-  bottom: '20px'
+  bottom: '20px',
+  float: 'left'
 }
