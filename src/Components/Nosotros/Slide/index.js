@@ -10,33 +10,18 @@ import {
 
 let items = [
   {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/v1534555410/consultant/8.png',
+    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_89,w_1350/v1534985103/sliderTwo/3515.jpg',
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555758/consultant/1.jpg',
+    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_lfill,g_face:center,h_800,w_2700/v1534984752/sliderTwo/155595-OUESXX-84.jpg',
     altText: 'Slide 2',
     caption: 'Slide 1'
   },
   {
-    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555690/consultant/7.jpg',
+    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_fill,h_1000,w_3350/v1534984741/sliderTwo/148.jpg',
     altText: 'Slide 3',
-    caption: 'Slide 1'
-  },
-  {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555623/consultant/4.jpg',
-    altText: 'Slide 4',
-    caption: 'Slide 1'
-  },
-  {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555587/consultant/3.jpg',
-    altText: 'Slide 5',
-    caption: 'Slide 1'
-  },
-  {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555616/consultant/2.jpg',
-    altText: 'Slide 7',
     caption: 'Slide 1'
   }
 ]

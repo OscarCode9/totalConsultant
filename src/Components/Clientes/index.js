@@ -26,14 +26,14 @@ export default class Clientes extends Component {
     return (
       <div>
         <Container>
-          <h4 style={{ fontWeight: 700, textAling: 'left' }} >ALGUNOS DE NUESTROS CLIENTES</h4>
+          <h4 style={{ fontWeight: 700, textAlign: 'left', paddingTop: '30px' }} >ALGUNOS DE NUESTROS CLIENTES</h4>
           <Row>
             {
               this.state.clientes.map((img, index) => {
                 return (
                   <Col style={info} key= {index} lg={4} >
                     <img style= {{
-                      width: '80%',
+                      width: '50%',
                       display:'block',
                       margin: 'auto',
                     }} src={img} alt={index} />

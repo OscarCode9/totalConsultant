@@ -90,11 +90,11 @@ export default class Example extends React.Component {
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>
 								{this.state.navItems.map(item => (
-									<NavItem key={item.text} style={item.active ? { borderBottom: '3px solid rgb(255, 94, 0)', padding: '5px', transition: 'all .1s ease 0s' } : { padding: '8px' }}  >
+									<NavItem key={item.text} style={item.active ? { borderBottom: '3px solid #FC7D1D', padding: '5px', transition: 'all .1s ease 0s' } : { padding: '8px' }}  >
 										<NavLink
 											id={item.path}
 											onClick={(e) => {this.changeActive(e.target.id)}}
-											style={item.active ? linkStyle : {...linkStyle, color: '#fff' } }
+											style={item.active ? linkStyle : {...linkStyle, color: '#FC7D1D' } }
 											tag={Link}
 											to={item.path} >
 											{item.text}

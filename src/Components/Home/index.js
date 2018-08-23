@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Slide from './Slide'
 import './style.css'
 import { Row, Col, Container } from 'reactstrap';
-
 const pStyle = {
   fontFamily: 'Helvetica',
   fontSize: '40px',
@@ -12,7 +11,7 @@ const pStyle = {
 }
 
 const buttonStyle = {
-  backgroundImage: 'linear-gradient(to right, #FF5D00 , #FF7D00)',
+  backgroundColor: '#FC7D1D',
   fontFamily: 'Helvetica',
   fontSize: '25px',
   fontWeight: 700,
@@ -41,14 +40,8 @@ export default class Home extends Component {
     super()
     this.state = {
       services : [
-        'Estrategia y organización',
-        'Desarrollo corporativo',
         'Fiscales',
-        'Administración operacional',
-        'Finanzas corporativas',
-        'Administración informática',
         'Contabilidad',
-        'Planeamiento estratégico',
         'Seguridad Social',
         'Legal',
         'Payrolling'
@@ -65,6 +58,7 @@ export default class Home extends Component {
           paddingBottom: '0px',
           fontSize: '35px',
         }}>
+        <br/><br/><br/>
           Asegúrate el éxito de tu compañía
           </h4>
         <p style={pStyle}>

@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import {Container, Row, Col } from 'reactstrap';
-import img1  from './img/1.jpeg'
-import img2  from './img/2.png'
 
+import Slider from './Slide'
 const styleContainer = {
   padding: '0px',
   border: '2px solid #e1e1e1',
   backgroundColor: 'whitesmoke',
 }
 
-const imgOneStyle = {
-  width: '100%' 
-}
 
 
 const hrStyle = {
@@ -28,22 +24,12 @@ export default class Nosotros extends Component {
   render() {
     return (
       <div>
-        <Container style ={styleContainer}  >
-        <Row style={{
-          paddingRight: '15px',
-          paddingLeft: '15px'
-          }} >
-          <Col lg= {8} style = {{ padding: '0px'}} >
-            <img style={imgOneStyle}  src={img1} alt = 'img1' />
-          </Col>
-          <Col lg= {4} style = {{
-            backgroundImage: "url(" + img2+ ")",
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '142% auto',
-            padding: '0px'
-          }} >
-          </Col>
-        </Row>
+        <Slider/>
+        <Container style ={styleContainer}  ><br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <Row>
         <Col  lg={12}>
               <div style={{ padding: '50px', textAlign: 'left' }} >
