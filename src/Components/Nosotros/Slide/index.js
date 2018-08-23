@@ -10,17 +10,17 @@ import {
 
 let items = [
   {
-    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_89,w_1350/v1534985103/sliderTwo/3515.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_89,w_1350/v1534985103/sliderTwo/3515.jpg',
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_lfill,g_face:center,h_800,w_2700/v1534984752/sliderTwo/155595-OUESXX-84.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_lfill,g_face:center,h_800,w_2700/v1534984752/sliderTwo/155595-OUESXX-84.jpg',
     altText: 'Slide 2',
     caption: 'Slide 1'
   },
   {
-    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_fill,h_1000,w_3350/v1534984741/sliderTwo/148.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_fill,h_1000,w_3350/v1534984741/sliderTwo/148.jpg',
     altText: 'Slide 3',
     caption: 'Slide 1'
   }
