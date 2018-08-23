@@ -20,7 +20,7 @@ let items = [
     caption: 'Slide 1'
   },
   {
-    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555690/consultant/7.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555690/consultant/7.jpg',
     altText: 'Slide 3',
     caption: 'Slide 1'
   },
