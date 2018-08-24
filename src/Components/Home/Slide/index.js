@@ -15,7 +15,7 @@ let items = [
     caption: 'Slide 1'
   },
   {
-    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061591/slider2.0/13391.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061591/slider2.0/13391.jpg',
     altText: 'Slide 2',
     caption: 'Slide 1'
   },

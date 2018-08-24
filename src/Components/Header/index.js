@@ -23,7 +23,7 @@ export default class Example extends React.Component {
 			isOpen: false,
 			navItems: [
 				{
-					path: '/inicio',
+					path: '/',
 					text: 'INICIO',
 					active: true
 				},
