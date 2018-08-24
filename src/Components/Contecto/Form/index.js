@@ -3,14 +3,13 @@ import { Form, FormGroup, Input } from 'reactstrap';
 
 
 const buttonStyle = {
-  backgroundImage: 'linear-gradient(to right, #FF5D00 , #FF7D00)',
+  backgroundColor: '#FC7D1D',
   fontFamily: 'Helvetica',
-  fontSize: '25px',
-  fontWeight: 700,
+  fontSize: '22px',
+  fontWeight: 500,
   border: 'none',
   color: 'white',
-  width: '23%',
-  float: 'left'
+  width: '20%'
 }
 
 export default class Example extends React.Component {

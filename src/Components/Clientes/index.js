@@ -1,11 +1,38 @@
 import React, { Component } from 'react'
 import { Container, Col, Row } from 'reactstrap'
 
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-const images = importAll(require.context('./img/', false, /\.(png|jpe?g|svg)$/));
+const images = [
+  {
+    style: {width: '60%'},
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_200/v1535143680/clientes/6.png'
+  },
+  {
+    style: {width: '100%'},
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_550/v1535143681/clientes/3.png'
+  } ,
+  {
+    style: {width: '95%'},
+    url: 'http://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_2304/v1535143681/clientes/7.jpg'
+    
+  } , 
+  {
+    style: {width: '95%',  marginTop: '30%'},
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/v1535143678/clientes/5.png'
+  }
+  , 
+  {
+    style: {width: '95%', marginTop: '15%'},
+    url: 'http://res.cloudinary.com/dqkikety1/image/upload/v1535143677/clientes/2.png'
+    
+  } ,
+  {
+    style: {width: '95%'},
+    url: 'http://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_634/v1535143676/clientes/1.jpg'
+    
+  }
+  
+  
+]
 
 const info = {
   padding: '10px',
@@ -32,11 +59,7 @@ export default class Clientes extends Component {
               this.state.clientes.map((img, index) => {
                 return (
                   <Col style={info} key= {index} lg={4} >
-                    <img style= {{
-                      width: '50%',
-                      display:'block',
-                      margin: 'auto',
-                    }} src={img} alt={index} />
+                    <img style= {img.style}  src={img.url} alt={index} />
                   </Col>
                 )
               })

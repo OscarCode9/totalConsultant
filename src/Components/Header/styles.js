@@ -1,7 +1,7 @@
 export const linkStyle = {
   color: 'rgba(255,94,0,1)',
   fontFamily: 'Helvetica',
-  fontSize: '17px',
+  fontSize: '14px',
   fontWeight: 700,
   transition: '1s'
 }

@@ -15,28 +15,33 @@ let items = [
     caption: 'Slide 1'
   },
   {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555758/consultant/1.jpg',
+    src: 'http://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061591/slider2.0/13391.jpg',
     altText: 'Slide 2',
     caption: 'Slide 1'
   },
   {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555690/consultant/7.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061581/slider2.0/128.jpg',
     altText: 'Slide 3',
     caption: 'Slide 1'
   },
   {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555623/consultant/4.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061581/slider2.0/61.jpg',
     altText: 'Slide 4',
     caption: 'Slide 1'
   },
   {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555587/consultant/3.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061578/slider2.0/97.jpg',
     altText: 'Slide 5',
     caption: 'Slide 1'
   },
   {
-    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_400,q_60,w_1350/v1534555616/consultant/2.jpg',
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061571/slider2.0/140966-OSX7NG-41.jpg',
     altText: 'Slide 7',
+    caption: 'Slide 1'
+  },
+  {
+    src: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_412,q_60,w_1350/v1535061532/slider2.0/155613-OUESZO-601.jpg',
+    altText: 'Slide 8',
     caption: 'Slide 1'
   }
 ]

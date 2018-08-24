@@ -15,11 +15,11 @@ const hrStyle = {
 const buttonStyle = {
   backgroundColor: '#FC7D1D',
   fontFamily: 'Helvetica',
-  fontSize: '25px',
+  fontSize: '22px',
   fontWeight: 500,
   border: 'none',
   color: 'white',
-  width: '100%'
+  width: '60%'
 }
 
 

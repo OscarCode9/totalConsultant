@@ -4,7 +4,7 @@ import './style.css'
 import { Row, Col, Container } from 'reactstrap';
 const pStyle = {
   fontFamily: 'Helvetica',
-  fontSize: '40px',
+  fontSize: '38px',
   fontWeight: 700,
   transition: '1s',
   padding: '0px'
@@ -13,11 +13,11 @@ const pStyle = {
 const buttonStyle = {
   backgroundColor: '#FC7D1D',
   fontFamily: 'Helvetica',
-  fontSize: '25px',
+  fontSize: '22px',
   fontWeight: 700,
   border: 'none',
   color: 'white',
-  width: '23%'
+  width: '20%'
 }
 
 const info = {
