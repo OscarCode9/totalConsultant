@@ -17,7 +17,7 @@ const buttonStyle = {
   fontWeight: 700,
   border: 'none',
   color: 'white',
-  width: '20%'
+  width: '15%'
 }
 
 const info = {

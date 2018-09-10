@@ -3,31 +3,31 @@ import { Container, Col, Row } from 'reactstrap'
 
 const images = [
   {
-    style: {width: '60%'},
+    style: {width: '30%'},
     url: 'https://res.cloudinary.com/dqkikety1/image/upload/c_scale,h_200/v1535143680/clientes/6.png'
   },
   {
-    style: {width: '100%'},
+    style: {width: '50%'},
     url: 'https://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_550/v1535143681/clientes/3.png'
   } ,
   {
-    style: {width: '95%'},
-    url: 'http://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_2304/v1535143681/clientes/7.jpg'
+    style: {width: '45%'},
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_2304/v1535143681/clientes/7.jpg'
     
   } , 
   {
-    style: {width: '95%',  marginTop: '30%'},
+    style: {width: '45%',  marginTop: '30%'},
     url: 'https://res.cloudinary.com/dqkikety1/image/upload/v1535143678/clientes/5.png'
   }
   , 
   {
-    style: {width: '95%', marginTop: '15%'},
-    url: 'http://res.cloudinary.com/dqkikety1/image/upload/v1535143677/clientes/2.png'
+    style: {width: '45%', marginTop: '15%'},
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/v1535143677/clientes/2.png'
     
   } ,
   {
-    style: {width: '95%'},
-    url: 'http://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_634/v1535143676/clientes/1.jpg'
+    style: {width: '45%'},
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_634/v1535143676/clientes/1.jpg'
     
   }
   

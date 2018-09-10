@@ -6,8 +6,8 @@ import {
 	Nav,
 	NavItem,
 	NavLink,
-	Container, 
-	Col, 
+	Container,
+	Col,
 	Row
 } from 'reactstrap';
 import logo from './Img/tcs-logo.png'
@@ -47,16 +47,31 @@ export default class Example extends React.Component {
 					text: 'CONTACTO',
 					active: false
 				}
-			]
+			],
+			scrollPosition: 0,
+			navStyle: {
+				padding: '0px',
+				position: 'fixed',
+				width: '100%',
+				zIndex: '9',
+			}
 		};
 	}
 
 	componentWillMount() {
 		const pathname = window.location.pathname;
-		this.changeActive(pathname) 
+		const self = this;
+		this.changeActive(pathname)
+		window.addEventListener("scroll", function (event) {
+			const scroll = this.scrollY;
+			this.console.log(scroll)
+			self.setState({
+				scrollPosition: scroll
+			})
+		});
 	}
-	
-	
+
+
 	toggle() {
 		this.setState({
 			isOpen: !this.state.isOpen
@@ -65,7 +80,7 @@ export default class Example extends React.Component {
 	changeActive = (id) => {
 		this.setState(prevState => {
 			const newNavItem = prevState.navItems.map(item => {
-				console.log(item.text ,id)
+				console.log(item.text, id)
 				if (item.path === id) {
 					item.active = true;
 				} else {
@@ -84,7 +99,12 @@ export default class Example extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar style={{ padding: '0px' }} color="dark" expand="md">
+				<Navbar style={this.state.scrollPosition > 60 ? {
+					padding: '0px',
+					position: 'fixed',
+					width: '100%',
+					zIndex: '999',
+				} : { padding: '0px' }} color="dark" expand="md">
 					<Container>
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
@@ -93,8 +113,8 @@ export default class Example extends React.Component {
 									<NavItem key={item.text} style={item.active ? { borderBottom: '3px solid #FC7D1D', padding: '5px', transition: 'all .1s ease 0s' } : { padding: '8px' }}  >
 										<NavLink
 											id={item.path}
-											onClick={(e) => {this.changeActive(e.target.id)}}
-											style={item.active ? linkStyle : {...linkStyle, color: '#FC7D1D' } }
+											onClick={(e) => { this.changeActive(e.target.id) }}
+											style={item.active ? linkStyle : { ...linkStyle, color: '#FC7D1D' }}
 											tag={Link}
 											to={item.path} >
 											{item.text}
@@ -110,11 +130,11 @@ export default class Example extends React.Component {
 					<Container>
 						<Row>
 							<Col lg={6}>
-								<img style = {logoStyle} src= {logo } alt='logo' />
-						</Col>
-							<Col style= {{ padding : '20px'}} lg={6} >
-								<p className= 'textLlamanos' >LLÁMANOS HOY MISMO PARA UNA CONSULTA<br /><span id="textNumero">6821 8067</span> </p>
-						</Col>
+								<img style={logoStyle} src={logo} alt='logo' />
+							</Col>
+							<Col style={{ padding: '20px' }} lg={6} >
+								<p className='textLlamanos' >LLÁMANOS HOY MISMO PARA UNA CONSULTA<br /><span id="textNumero">6821 8067</span> </p>
+							</Col>
 						</Row>
 					</Container>
 
