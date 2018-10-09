@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import Map from './Map';
 import Form from './Form';
+import './style.css';
 
 const hrStyle = {
   height: '2px',
@@ -18,21 +19,32 @@ export default class Contacto extends Component {
         <Container style={{ paddingTop: '30px' }} >
           <Row style={{ textAlign: 'left' }} >
             <Col lg={12}>
-              <Row style={{ paddingBottom: '30px' }}>
+              <Row style={{ paddingBottom: '10px' }}>
                 <Col lg={12} >
                   <h4 style={{ fontWeight: 700 }} >CONTACTO</h4>
+
                 </Col>
                 <hr style={hrStyle} />
-              </Row>
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={6} style={{ textAlign: 'left' }} >
-              <Form />
-            </Col>
-            <Col lg={6} ><Map></Map></Col>
 
+              </Row>
+
+              <Row  >
+
+                <Col lg={6} style={{ textAlign: 'left' }} >
+                  <p className="textRio">Rio Naza 171</p>
+                  <p className="textRio">Cuauhtémoc, 06500 Ciudad de México, CDMX</p>
+                  <Form />
+                </Col>
+                <Col lg={6} >
+                  <Map></Map>
+                </Col>
+              </Row>
+
+
+
+            </Col>
           </Row>
+
         </Container>
       </div>
     )
