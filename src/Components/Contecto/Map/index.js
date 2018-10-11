@@ -2,28 +2,20 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 const AnyReactComponent = ({ text }) => (
-  <div style={{
-    color: 'white', 
-    background: 'grey',
-    padding: '15px 10px',
-    display: 'inline-flex',
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '100%',
-    transform: 'translate(-50%, -50%)'
-  }}>
+  <div >
     {text}
+    <i style ={{fontSize: '35px', color: 'red'}} className="fas fa-map-marker-alt"></i>
+  
   </div>
 );
 
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 19.433190,
+      lng: -99.165240
     },
-    zoom: 11
+    zoom: 17
   };
 
   render() {
@@ -31,14 +23,14 @@ class SimpleMap extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height:   '500px', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyBjExyy_C4AghTdC2Tiqo65WyJfJwO8Tp8' }}
+          bootstrapURLKeys={{ key: 'AIzaSyCrWp2rIpEyBROsXIGdL4W3hYNtCTL5zKM' }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
           <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text={'Kreyser Avrora'}
+            lat={19.433190}
+            lng={-99.165240}
+            text={'TCS'}
           />
         </GoogleMapReact>
       </div>

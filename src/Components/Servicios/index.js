@@ -110,7 +110,7 @@ export default class Home extends Component {
 
             <Col style={info} lg={6}>
               <div style={{ padding: '50px', textAlign: 'left' }} >
-                <h4 style={{ fontWeight: 700 }} >PAYROLLING</h4>
+                <h4 style={{ fontWeight: 700, color:  'rgb(252, 125, 29)'  }} >PAYROLLING</h4>
                 <hr style={hrStyle} />
 
 

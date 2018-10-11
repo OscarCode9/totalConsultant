@@ -13,9 +13,8 @@ export const navdown  = {
 }
 
 export const logoStyle = {
-  height:'180px',
+  height:'140px',
   weight: 'auto',
   position: 'relative',
-  bottom: '20px',
   float: 'left'
 }
