@@ -10,7 +10,7 @@ import {
 	Col,
 	Row
 } from 'reactstrap';
-import logo from './Img/tcs-logo.png'
+import logo from './Img/tcs-logo.jpeg'
 import { Link } from 'react-router-dom';
 import { linkStyle, navdown, logoStyle } from './styles'
 import './style.css'
