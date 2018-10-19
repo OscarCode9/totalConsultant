@@ -20,7 +20,8 @@ const buttonStyle = {
   fontWeight: 700,
   border: 'none',
   color: 'white',
-  width: '15%'
+  width: '15%',
+  cursor: 'pointer'
 }
 
 const info = {
@@ -53,6 +54,9 @@ const hrStyle = {
 
   goContacto =() =>{
     this.props.history.push('/contacto') 
+  }
+  goAbout = () => {
+    this.props.history.push('/nosotros') 
   }
   
   render() {
@@ -103,7 +107,7 @@ const hrStyle = {
                 */}
                 
 
-                <p className="readMore">{'LEER MAS >>'} </p>
+                <p className="readMore" onClick={this.goAbout}>{'LEER MAS >>'} </p>
               </div>
             </Col>
 

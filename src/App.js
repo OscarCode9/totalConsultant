@@ -7,13 +7,27 @@ import Footer from './Components/Footer'
 import './bootstrap.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      route: ''
+    }
+  }
+
+  handleRouteChanged = (e) => {
+    const value = e.pathname;
+    this.setState({
+      route: value
+    })
+  }
+  
   render() {
     return (
       <div className="App">
         <Router>
             <div>
-              <Header/>
-              <Routes/>
+              <Header router={this.state.route} />
+              <Routes onRouteChanged={ this.handleRouteChanged } />
               <Footer/>
             </div>
         </Router>

@@ -44,6 +44,7 @@ export default class Example extends React.Component {
   }
 
   validateEmail(email) {
+    // eslint-disable-next-line
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
@@ -68,7 +69,7 @@ export default class Example extends React.Component {
 
        const url = 'http://localhost:4000/api/SendEmailService';
 
-       const result = await fetch(url, {
+       await fetch(url, {
          method:'POST',
          body: form
        });  

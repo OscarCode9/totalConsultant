@@ -13,6 +13,7 @@ const hrStyle = {
 }
 
 export default class Contacto extends Component {
+
   render() {
     return (
       <div>

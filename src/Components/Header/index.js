@@ -108,16 +108,21 @@ class Example extends React.Component {
 		});
 	}
 
-	componentWillReceiveProps(){
-		
-		const pathname = window.location.pathname;
-		if(pathname=== '/servicios' ){
-
-			this.setState({
-				isService: true
+	componentWillReceiveProps(nextProps){
+		this.setState(prevState => {
+			const newNavItem = prevState.navItems.map(item => {
+				if (item.path === nextProps.router) {
+					item.active = true;
+				} else {
+					item.active = false
+				}
+				return item
 			})
 
-		}
+			return {
+				navItems: newNavItem
+			}
+		});
 	}
 
 
