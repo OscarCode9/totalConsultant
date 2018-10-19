@@ -49,6 +49,9 @@ export default class Nosotros extends Component {
                 <p className="textWho">
                   En 2018 TCS incluye los servicios Inmobiliarios, con ello creamos valor a nuestra gama de servicios incorporando expertos en elramo
                 </p>
+                <br/>
+                <br/>
+                <br/>
                 <h4 style={{ fontWeight: 700 }} >NUESTRA VISIÓN</h4>
                 <hr style={hrStyle} />
                 <p className="textWho">

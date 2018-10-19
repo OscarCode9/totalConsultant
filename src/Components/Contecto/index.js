@@ -31,7 +31,7 @@ export default class Contacto extends Component {
               <Row  >
 
                 <Col lg={6} style={{ textAlign: 'left' }} >
-                  <p className="textRio">Rio Naza 171</p>
+                  <p className="textRio">Rio Nazas 171</p>
                   <p className="textRio">Cuauhtémoc, 06500 Ciudad de México, CDMX</p>
                   <Form />
                 </Col>

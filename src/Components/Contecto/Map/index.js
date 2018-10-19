@@ -5,7 +5,6 @@ const AnyReactComponent = ({ text }) => (
   <div >
     {text}
     <i style ={{fontSize: '35px', color: 'red'}} className="fas fa-map-marker-alt"></i>
-  
   </div>
 );
 

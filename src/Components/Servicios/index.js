@@ -18,7 +18,6 @@ const hrStyle = {
   marginLeft: 0,
 }
 
-
 export default class Home extends Component {
   constructor() {
     super()
@@ -91,8 +90,6 @@ export default class Home extends Component {
               <div style={{ padding: '50px', textAlign: 'left' }} >
                 <h4 style={{ fontWeight: 700 , color:  'rgb(252, 125, 29)'  }} >SEGURIDAD SOCIAL</h4>
                 <hr style={hrStyle} />
-                
-
                 {
                   this.state.social.map((text, index) => {
 

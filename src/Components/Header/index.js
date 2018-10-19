@@ -14,13 +14,30 @@ import logo from './Img/tcs-logo.jpeg'
 import { Link } from 'react-router-dom';
 import { linkStyle, navdown, logoStyle } from './styles'
 import './style.css'
-export default class Example extends React.Component {
+import { withRouter } from 'react-router-dom'
+
+const buttonStyle = {
+  backgroundColor: '#FC7D1D',
+  fontFamily: 'Helvetica',
+  fontSize: '22px',
+  fontWeight: 700,
+  border: 'none',
+  color: 'white',
+	width: '15%',
+	position: 'fixed',
+	right: '10%',
+	top:   '140px' 
+}
+
+
+class Example extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.toggle = this.toggle.bind(this);
 		this.state = {
 			isOpen: false,
+			isService: false,
 			navItems: [
 				{
 					path: '/',
@@ -60,15 +77,47 @@ export default class Example extends React.Component {
 
 	componentWillMount() {
 		const pathname = window.location.pathname;
+		if(pathname=== '/servicios' ){
+
+			this.setState({
+				isService: true
+			})
+
+		}
 		const self = this;
-		this.changeActive(pathname)
+		this.changeActive(pathname);
 		window.addEventListener("scroll", function (event) {
+			const pathname = window.location.pathname;
 			const scroll = this.scrollY;
 			this.console.log(scroll)
+			if(pathname === '/servicios'){
+				if(scroll  > 50 ){
+					self.setState({
+						isService: false
+					})
+				}else{
+					self.setState({
+						isService: true 
+					})
+				}
+			}
+			
 			self.setState({
 				scrollPosition: scroll
 			})
 		});
+	}
+
+	componentWillReceiveProps(){
+		
+		const pathname = window.location.pathname;
+		if(pathname=== '/servicios' ){
+
+			this.setState({
+				isService: true
+			})
+
+		}
 	}
 
 
@@ -78,6 +127,18 @@ export default class Example extends React.Component {
 		});
 	}
 	changeActive = (id) => {
+		
+		if(id === '/servicios' ){
+
+			this.setState({
+				isService: true
+			})
+
+		}else{
+			this.setState({
+				isService: false
+			})
+		}
 		this.setState(prevState => {
 			const newNavItem = prevState.navItems.map(item => {
 				console.log(item.text, id)
@@ -96,10 +157,32 @@ export default class Example extends React.Component {
 
 
 	}
+
+
+	goContacto =() =>{
+		this.setState(prevState=> {
+			const newNavItem = prevState.navItems.map(item => {
+				
+				if (item.path === '/contacto') {
+					item.active = true;
+				} else {
+					item.active = false
+				}
+				return item
+			})
+			return{
+				isService: false,
+				navItems: newNavItem
+			}
+		}, () =>{
+			this.props.history.push('/contacto')
+		})
+	
+	}
 	render() {
 		return (
 			<div>
-				<Navbar style={this.state.scrollPosition > 60 ? {
+				<Navbar style={this.state.scrollPosition >  50 ? {
 					padding: '0px',
 					position: 'fixed',
 					width: '100%',
@@ -134,8 +217,16 @@ export default class Example extends React.Component {
 							</Col>
 							<Col style={{ padding: '20px' }} lg={6} >
 								<p className='textLlamanos' >LLÁMANOS HOY MISMO PARA UNA CONSULTA<br /><span id="textNumero">6821 8067</span> </p>
+								<br/>
+								{
+									this.state.isService  ? <button onClick={this.goContacto} style={buttonStyle} >COTIZAR</button> : null
+								}
+										
+							
 							</Col>
+							
 						</Row>
+						
 					</Container>
 
 				</div>
@@ -146,3 +237,5 @@ export default class Example extends React.Component {
 		);
 	}
 }
+
+export default withRouter (Example)
