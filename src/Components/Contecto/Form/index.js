@@ -74,12 +74,7 @@ export default class Example extends React.Component {
          body: form
        });  
 
-       
 
-
-
-
-      
     }else {
 
     }
