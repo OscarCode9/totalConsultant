@@ -5,6 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import Footer from './Components/Footer'
 import './bootstrap.css';
+import {ToastContainer } from "react-toastify"
+
+import 'react-toastify/dist/ReactToastify.css';
 
 class App extends Component {
   constructor(props) {
@@ -20,16 +23,28 @@ class App extends Component {
       route: value
     })
   }
-  
+
   render() {
     return (
       <div className="App">
         <Router>
-            <div>
-              <Header router={this.state.route} />
-              <Routes onRouteChanged={ this.handleRouteChanged } />
-              <Footer/>
-            </div>
+          <div>
+            <Header router={this.state.route} />
+            <ToastContainer
+              position='top-right'
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnVisibilityChange
+              draggablePercent={100}
+              draggable
+              pauseOnHover
+            />
+            <Routes onRouteChanged={this.handleRouteChanged} />
+            <Footer />
+          </div>
         </Router>
       </div>
     );

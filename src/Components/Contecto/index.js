@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
-import Map from './Map';
+
 import Form from './Form';
 import './style.css';
+
+
+import map from './map.jpg';
+
 
 const hrStyle = {
   height: '2px',
   color: 'black',
   backgroundColor: 'black',
   width: '20%',
+  marginLeft: 0,
+}
+
+const imgStyle = {
+  width: '100%',
+  height: 'auto',
   marginLeft: 0,
 }
 
@@ -37,7 +47,7 @@ export default class Contacto extends Component {
                   <Form />
                 </Col>
                 <Col lg={6} >
-                  <Map></Map>
+                  <img style={imgStyle} src={map} alt="mapImg"/>
                 </Col>
               </Row>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, Input } from 'reactstrap';
 
-
+import { toast } from 'react-toastify'
 const buttonStyle = {
   backgroundColor: '#FC7D1D',
   fontFamily: 'Helvetica',
@@ -29,18 +29,18 @@ export default class Example extends React.Component {
 
   handleOnChangeInput = (e) => {
 
-    const name =  e.target.name;
+    const name = e.target.name;
     const value = e.target.value;
 
     this.setState(prevState => {
-      
-      return { 
+
+      return {
         form: {
           ...prevState.form,
-          [name] : value
+          [name]: value
         }
       }
-    }); 
+    });
   }
 
   validateEmail(email) {
@@ -48,36 +48,78 @@ export default class Example extends React.Component {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-  handleSendEmail= async (e) => { 
+  handleSendEmail = async (e) => {
 
     e.preventDefault();
 
-    if(this.validateEmail(this.state.form.email) && this.state.form.name.length > 0  ){
-       
-      const { name }  = this.state.form;
-       const { email }  = this.state.form;
-       const { subject }  = this.state.form;
-       const { messanger }  = this.state.form;
+    if (this.validateEmail(this.state.form.email) && this.state.form.name.length > 0) {
 
-       const form = new FormData();
+      const { name } = this.state.form;
+      const { email } = this.state.form;
+      const { subject } = this.state.form;
+      const { messanger } = this.state.form;
 
-       form.append('name',name)
-       form.append('subject',subject)
-       form.append('message',messanger )
-       form.append('email', email )
-       form.append('emailTo', "oscar.99.tris@gmail.com");
+      const form = new FormData();
 
-       const url = 'http://localhost:4000/api/SendEmailService';
+      form.append('name', name)
+      form.append('subject', subject)
+      form.append('message', messanger)
+      form.append('email', email)
+      form.append('emailTo', "contacto@tcsmx.com");
 
-       await fetch(url, {
-         method:'POST',
-         body: form
-       });  
+      const url = 'https://oscarcode.herokuapp.com/api/SendEmailService';
 
 
-    }else {
 
+      const res = await fetch(url, {
+        method: 'POST',
+        body: form
+      });
+
+      const result = await res.json();
+
+      alert(result.error)
+
+      if (!result.error) {
+        toast.success('Tu correo se ha enviado!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      }else{
+        toast.error('Hubo un error intente mas tarde!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      }
+
+
+    } else {
+      toast.error('Campos no validos!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
+
+    this.setState({
+      form: {
+        name: '',
+        email: '',
+        subject: '',
+        messanger: ''
+      }
+    })
 
   }
 
@@ -128,8 +170,8 @@ export default class Example extends React.Component {
 
         <div className="row">
           <div className="col-lg-12">
-            <button 
-              onClick = {this.handleSendEmail } 
+            <button
+              onClick={this.handleSendEmail}
               style={buttonStyle} className="btn btn-secondary float-right">Enviar</button>
           </div>
         </div>
