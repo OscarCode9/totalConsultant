@@ -29,6 +29,12 @@ const images = [
     style: {width: '45%'},
     url: 'https://res.cloudinary.com/dqkikety1/image/upload/c_crop,h_634/v1535143676/clientes/1.jpg'
     
+  }, {
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/v1544589172/WhatsApp_Image_2018-12-10_at_11.43.56.jpg',
+    style: {width: '45%'}
+  }, {
+    url: 'https://res.cloudinary.com/dqkikety1/image/upload/v1544589172/WhatsApp_Image_2018-12-10_at_11.42.43.jpg', 
+    style: {width: '65%'}
   }
   
   
