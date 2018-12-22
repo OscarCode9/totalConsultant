@@ -15,18 +15,21 @@ import { Link } from 'react-router-dom';
 import { linkStyle, navdown, logoStyle } from './styles'
 import './style.css'
 import { withRouter } from 'react-router-dom'
+import Button from '@material-ui/core/Button'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 
 const buttonStyle = {
-  backgroundColor: '#FC7D1D',
-  fontFamily: 'Helvetica',
-  fontSize: '22px',
-  fontWeight: 700,
-  border: 'none',
-  color: 'white',
+	backgroundColor: '#FC7D1D',
+	fontFamily: 'Helvetica',
+	fontSize: '22px',
+	fontWeight: 700,
+	border: 'none',
+	color: 'white',
 	width: '15%',
 	position: 'fixed',
 	right: '10%',
-	top:   '140px' 
+	top: '140px'
 }
 
 
@@ -38,6 +41,7 @@ class Example extends React.Component {
 		this.state = {
 			isOpen: false,
 			isService: false,
+			anchorEl: null,
 			navItems: [
 				{
 					path: '/',
@@ -77,7 +81,7 @@ class Example extends React.Component {
 
 	componentWillMount() {
 		const pathname = window.location.pathname;
-		if(pathname=== '/servicios' ){
+		if (pathname === '/servicios') {
 
 			this.setState({
 				isService: true
@@ -90,25 +94,25 @@ class Example extends React.Component {
 			const pathname = window.location.pathname;
 			const scroll = this.scrollY;
 			this.console.log(scroll)
-			if(pathname === '/servicios'){
-				if(scroll  > 50 ){
+			if (pathname === '/servicios') {
+				if (scroll > 50) {
 					self.setState({
 						isService: false
 					})
-				}else{
+				} else {
 					self.setState({
-						isService: true 
+						isService: true
 					})
 				}
 			}
-			
+
 			self.setState({
 				scrollPosition: scroll
 			})
 		});
 	}
 
-	componentWillReceiveProps(nextProps){
+	componentWillReceiveProps(nextProps) {
 		this.setState(prevState => {
 			const newNavItem = prevState.navItems.map(item => {
 				if (item.path === nextProps.router) {
@@ -132,14 +136,14 @@ class Example extends React.Component {
 		});
 	}
 	changeActive = (id) => {
-		
-		if(id === '/servicios' ){
+
+		if (id === '/servicios') {
 
 			this.setState({
 				isService: true
 			})
 
-		}else{
+		} else {
 			this.setState({
 				isService: false
 			})
@@ -164,10 +168,19 @@ class Example extends React.Component {
 	}
 
 
-	goContacto =() =>{
-		this.setState(prevState=> {
+	handleClick = event => {
+		this.setState({ anchorEl: event.currentTarget });
+	};
+
+	handleClose = () => {
+		this.setState({ anchorEl: null });
+	};
+
+
+	goContacto = () => {
+		this.setState(prevState => {
 			const newNavItem = prevState.navItems.map(item => {
-				
+
 				if (item.path === '/contacto') {
 					item.active = true;
 				} else {
@@ -175,19 +188,20 @@ class Example extends React.Component {
 				}
 				return item
 			})
-			return{
+			return {
 				isService: false,
 				navItems: newNavItem
 			}
-		}, () =>{
+		}, () => {
 			this.props.history.push('/contacto')
 		})
-	
+
 	}
 	render() {
+		const { anchorEl } = this.state;
 		return (
 			<div>
-				<Navbar style={this.state.scrollPosition >  50 ? {
+				<Navbar style={this.state.scrollPosition > 50 ? {
 					padding: '0px',
 					position: 'fixed',
 					width: '100%',
@@ -197,18 +211,64 @@ class Example extends React.Component {
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>
-								{this.state.navItems.map(item => (
-									<NavItem key={item.text} style={item.active ? { borderBottom: '3px solid #FC7D1D', padding: '5px', transition: 'all .1s ease 0s' } : { padding: '8px' }}  >
+								{this.state.navItems.map(item => {
+									if (item.path === '/servicios') {
+
+										return (
+
+											<NavItem key={item.text} style={item.active ? { borderBottom: '3px solid #FC7D1D', padding: '5px', transition: 'all .1s ease 0s' } : { padding: '8px' }}  >
+												<div
+													id={item.path}
+													aria-owns={anchorEl ? 'simple-menu' : undefined}
+													aria-haspopup="true"
+													onClick={this.handleClick}
+													style={item.active ? { ...linkStyle, padding: '10px' } : { ...linkStyle, color: '#FC7D1D', padding: '10px' }}
+												>
+													{item.text}
+												</div>
+											</NavItem>
+										)
+
+									}
+									return (
+										<NavItem key={item.text} style={item.active ? { borderBottom: '3px solid #FC7D1D', padding: '5px', transition: 'all .1s ease 0s' } : { padding: '8px' }}  >
+											<NavLink
+												id={item.path}
+												onClick={(e) => { this.changeActive(e.target.id) }}
+												style={item.active ? linkStyle : { ...linkStyle, color: '#FC7D1D' }}
+												tag={Link}
+												to={item.path} >
+												{item.text}
+											</NavLink>
+										</NavItem>
+									)
+								})}
+
+								<Menu
+									id="simple-menu"
+									anchorEl={anchorEl}
+									open={Boolean(anchorEl)}
+									onClose={this.handleClose}
+								>
+									<MenuItem onClick={this.handleClose}>
 										<NavLink
-											id={item.path}
+											id={'/servicios'}
 											onClick={(e) => { this.changeActive(e.target.id) }}
-											style={item.active ? linkStyle : { ...linkStyle, color: '#FC7D1D' }}
+											style={{ ...linkStyle, color: '#FC7D1D' }}
+											to={'/servicios'}
 											tag={Link}
-											to={item.path} >
-											{item.text}
-										</NavLink>
-									</NavItem>
-								))}
+										>
+											SEGURIDAD SOCIAL
+											</NavLink>
+									</MenuItem>
+									<MenuItem onClick={this.handleClose}>PAYROLLING</MenuItem>
+									<MenuItem onClick={this.handleClose}>FISCALES</MenuItem>
+									<MenuItem onClick={this.handleClose}>CONTABLE</MenuItem>
+									<MenuItem onClick={this.handleClose}>LEGALES</MenuItem>
+
+
+								</Menu>
+
 							</Nav>
 						</Collapse>
 					</Container>
@@ -222,16 +282,16 @@ class Example extends React.Component {
 							</Col>
 							<Col style={{ padding: '20px' }} lg={6} >
 								<p className='textLlamanos' >LLÁMANOS HOY MISMO PARA UNA CONSULTA<br /><span id="textNumero">6821 8067</span> </p>
-								<br/>
+								<br />
 								{
-									this.state.isService  ? <button onClick={this.goContacto} style={buttonStyle} >COTIZAR</button> : null
+									this.state.isService ? <button onClick={this.goContacto} style={buttonStyle} >COTIZAR</button> : null
 								}
-										
-							
+
+
 							</Col>
-							
+
 						</Row>
-						
+
 					</Container>
 
 				</div>
@@ -243,4 +303,4 @@ class Example extends React.Component {
 	}
 }
 
-export default withRouter (Example)
+export default withRouter(Example)
