@@ -5,7 +5,6 @@ import {
 	NavbarToggler,
 	Nav,
 	NavItem,
-	NavLink,
 	Container,
 	Col,
 	Row
@@ -15,10 +14,10 @@ import { Link } from 'react-router-dom';
 import { linkStyle, navdown, logoStyle } from './styles'
 import './style.css'
 import { withRouter } from 'react-router-dom'
-import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-
+import { withStyles } from '@material-ui/core/styles'
+import { HashLink as NavLink } from 'react-router-hash-link';
 const buttonStyle = {
 	backgroundColor: '#FC7D1D',
 	fontFamily: 'Helvetica',
@@ -31,6 +30,17 @@ const buttonStyle = {
 	right: '10%',
 	top: '140px'
 }
+
+
+const styles = theme => ({
+  menu: {
+    backgroundColor: '#444',
+    color: '#fc7d1d',
+    fontWeight: '700'
+  }
+})
+
+
 
 
 class Example extends React.Component {
@@ -131,8 +141,10 @@ class Example extends React.Component {
 
 
 	toggle() {
-		this.setState({
-			isOpen: !this.state.isOpen
+		this.setState(prevState => {
+
+			return { isOpen: !prevState.isOpen }
+			
 		});
 	}
 	changeActive = (id) => {
@@ -150,7 +162,6 @@ class Example extends React.Component {
 		}
 		this.setState(prevState => {
 			const newNavItem = prevState.navItems.map(item => {
-				console.log(item.text, id)
 				if (item.path === id) {
 					item.active = true;
 				} else {
@@ -199,6 +210,7 @@ class Example extends React.Component {
 	}
 	render() {
 		const { anchorEl } = this.state;
+		 const { classes } = this.props;
 		return (
 			<div>
 				<Navbar style={this.state.scrollPosition > 50 ? {
@@ -222,7 +234,7 @@ class Example extends React.Component {
 													aria-owns={anchorEl ? 'simple-menu' : undefined}
 													aria-haspopup="true"
 													onClick={this.handleClick}
-													style={item.active ? { ...linkStyle, padding: '10px' } : { ...linkStyle, color: '#FC7D1D', padding: '10px' }}
+													style={item.active ? { ...linkStyle, padding: '0px' } : { ...linkStyle, color: '#FC7D1D', padding: '2px' }}
 												>
 													{item.text}
 												</div>
@@ -245,26 +257,85 @@ class Example extends React.Component {
 								})}
 
 								<Menu
+
 									id="simple-menu"
 									anchorEl={anchorEl}
 									open={Boolean(anchorEl)}
 									onClose={this.handleClose}
+									
 								>
-									<MenuItem onClick={this.handleClose}>
+									
 										<NavLink
+											id={'/servicios#SEGURIDADSOCIAL'}
+											onClick={(e) => { this.changeActive(e.target.id) }}
+											style={{ ...linkStyle, color: '#FC7D1D' }}
+											to={'/servicios#SEGURIDADSOCIAL'}
+											tag={Link}
+										>
+										<MenuItem className={classes.menu} onClick={this.handleClose}>
+											SEGURIDAD SOCIAL
+											</MenuItem>
+											</NavLink>
+									
+									
+										<NavLink
+											id={'/servicios#PAYROLLING'}
+											onClick={(e) => { this.changeActive(e.target.id) }}
+											style={{ ...linkStyle, color: '#FC7D1D' }}
+											to={'/servicios#PAYROLLING'}
+											tag={Link}
+										>
+										<MenuItem className={classes.menu} onClick={this.handleClose}>
+											PAYROLLING
+											</MenuItem>
+										</NavLink>
+									
+									
+									
+									<NavLink
+											id={'/servicios#FISCALES'}
+											onClick={(e) => { this.changeActive(e.target.id) }}
+											style={{ ...linkStyle, color: '#FC7D1D' }}
+											to={'/servicios#FISCALES'}
+											tag={Link}
+										>
+										<MenuItem className={classes.menu} onClick={this.handleClose}>
+											FISCALES
+											</MenuItem>
+										</NavLink>
+										
+									
+									
+
+									<NavLink
+											id={'/servicios#CONTABLE'}
+											onClick={(e) => { this.changeActive(e.target.id) }}
+											style={{ ...linkStyle, color: '#FC7D1D' }}
+											to={'/servicios#CONTABLE'}
+											tag={Link}
+										>
+										<MenuItem className={classes.menu} onClick={this.handleClose}>
+											CONTABLE
+											</MenuItem>
+										</NavLink>
+
+										
+									
+									
+									<NavLink
 											id={'/servicios'}
 											onClick={(e) => { this.changeActive(e.target.id) }}
 											style={{ ...linkStyle, color: '#FC7D1D' }}
-											to={'/servicios'}
+											to={'/servicios#LEGALES'}
 											tag={Link}
 										>
-											SEGURIDAD SOCIAL
-											</NavLink>
-									</MenuItem>
-									<MenuItem onClick={this.handleClose}>PAYROLLING</MenuItem>
-									<MenuItem onClick={this.handleClose}>FISCALES</MenuItem>
-									<MenuItem onClick={this.handleClose}>CONTABLE</MenuItem>
-									<MenuItem onClick={this.handleClose}>LEGALES</MenuItem>
+										<MenuItem className={classes.menu} onClick={this.handleClose}>
+											LEGALES
+											</MenuItem>
+										</NavLink>
+
+										
+									
 
 
 								</Menu>
@@ -303,4 +374,4 @@ class Example extends React.Component {
 	}
 }
 
-export default withRouter(Example)
+export default withStyles(styles)(withRouter(Example))

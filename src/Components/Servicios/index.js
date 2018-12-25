@@ -86,7 +86,7 @@ export default class Home extends Component {
       
         <Container>
           <Row>
-          <Col style={info} lg={12}>
+          <Col id='SEGURIDADSOCIAL' style={info} lg={12}>
               <div style={{ padding: '50px', textAlign: 'left' }} >
                 <h4 style={{ fontWeight: 700 , color:  'rgb(252, 125, 29)'  }} >SEGURIDAD SOCIAL</h4>
                 <hr style={hrStyle} />
@@ -105,7 +105,7 @@ export default class Home extends Component {
               </div>
             </Col>
 
-            <Col style={info} lg={12}>
+            <Col id='PAYROLLING' style={info} lg={12}>
               <div style={{ padding: '50px', textAlign: 'left' }} >
                 <h4 style={{ fontWeight: 700, color:  'rgb(252, 125, 29)'  }} >PAYROLLING</h4>
                 <hr style={hrStyle} />
@@ -126,7 +126,7 @@ export default class Home extends Component {
               </div>
             </Col>
             
-            <Col style={info} lg={12}>
+            <Col id='FISCALES' style={info} lg={12}>
               <div style={{ padding: '50px', textAlign: 'left' }} >
                 <h4 style={{ fontWeight: 700, color:  'rgb(252, 125, 29)'   }} >FISCALES</h4>
                 <hr style={hrStyle} />
@@ -145,7 +145,7 @@ export default class Home extends Component {
                
               </div>
             </Col>
-            <Col style={info} lg={12}>
+            <Col id='CONTABLE' style={info} lg={12}>
               <div style={{ padding: '50px', textAlign: 'left' }} >
                 <h4 style={{ fontWeight: 700, color:  'rgb(252, 125, 29)'  }} >CONTABLE</h4>
                 <hr style={hrStyle} />
@@ -162,7 +162,7 @@ export default class Home extends Component {
 
               </div>
             </Col>
-            <Col style={info} lg={12}>
+            <Col id='LEGALES' style={info} lg={12}>
               <div style={{ padding: '50px', textAlign: 'left' }} >
                 <h4 style={{ fontWeight: 700, color:  'rgb(252, 125, 29)'   }} >LEGALES</h4>
                 <hr style={hrStyle} />
