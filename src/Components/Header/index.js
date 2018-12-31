@@ -37,7 +37,8 @@ const styles = theme => ({
     backgroundColor: '#444',
     color: '#fc7d1d',
     fontWeight: '700'
-  }
+  },
+  paper: {backgroundColor: '#444444', paddingTop: 0, paddingBottom: 0}
 })
 
 
@@ -218,7 +219,8 @@ class Example extends React.Component {
 					position: 'fixed',
 					width: '100%',
 					zIndex: '999',
-				} : { padding: '0px' }} color="dark" expand="md">
+					paddingTop: '14px' 
+				} : { padding: '0px', paddingTop: '14px' }} color="dark" expand="md">
 					<Container>
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
@@ -249,6 +251,7 @@ class Example extends React.Component {
 												onClick={(e) => { this.changeActive(e.target.id) }}
 												style={item.active ? linkStyle : { ...linkStyle, color: '#FC7D1D' }}
 												tag={Link}
+												
 												to={item.path} >
 												{item.text}
 											</NavLink>
@@ -262,6 +265,10 @@ class Example extends React.Component {
 									anchorEl={anchorEl}
 									open={Boolean(anchorEl)}
 									onClose={this.handleClose}
+									classes={{
+										paper: classes.paper
+									}}
+									
 									
 								>
 									
